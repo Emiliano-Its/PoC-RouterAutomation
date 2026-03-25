@@ -1,0 +1,25 @@
+# PoC Router Cisco
+
+Esta es una **Prueba de Concepto (PoC)** diseñada para automatizar la extracción de datos de dispositivos de red Cisco (IOS). El proyecto realiza una automatización basica utilizando python como prueba de concepto para el diseño e implementacion de una red empresarial estadarizada.
+
+
+## Características Principales
+* **Conectividad Preventiva:** Realiza un test de Ping (ICMP) antes de intentar la conexión SSH para validar el estado del nodo.
+* **Extracción Multi-Comando:** Captura de forma automática el `running-config` y el estado detallado de las interfaces (`show interfaces`).
+* **Reportes Profesionales:** Genera un archivo `.xlsx` 
+
+
+## Tecnologías utilizadas
+* **Lenguaje:** Python 3.x
+* **Librerías:**
+  * `Netmiko`: Gestión de conexiones SSH.
+  * `Pandas` & `XlsxWriter`: Procesamiento de datos y creación de Excel.
+  * `python-dotenv`: Manejo de variables de entorno.
+  * `Subprocess`: Ejecución de comandos de sistema local.
+
+Para ejecutar el script, crea un archivo .env en la raíz con el siguiente formato.
+
+ROUTER_HOST=192.168.106.150
+ROUTER_USER=admin
+ROUTER_PASS=cisco
+ROUTER_SECRET=cisco

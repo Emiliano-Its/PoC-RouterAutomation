@@ -1,0 +1,57 @@
+# --- Entorno Virtual (VENV) ---
+# Filtra las carpetas que crea Windows al hacer python -m venv
+Lib/
+Include/
+Scripts/
+pyvenv.cfg
+share/python-wheels/
+
+# Otros nombres comunes de entornos
+venv/
+.venv/
+env/
+ENV/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# --- Variables de Entorno (SEGURIDAD) ---
+.env
+.env.test
+.env.local
+
+# --- Reportes y Salidas (Excel) ---
+*.xlsx
+*.xls
+*.csv
+reporte_*.xlsx
+auditoria_*.xlsx
+
+# --- Logs ---
+*.log
+debug.txt
+
+# --- Editores y Sistema ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
