@@ -15,6 +15,8 @@ device = {
     'password': os.getenv('ROUTER_PASS'),  
     'secret': os.getenv('ROUTER_SECRET'),  
     'conn_timeout': 20,
+    'ssh_config_file': os.path.expanduser('~/.ssh/config'),
+    'verbose': True,
 }
 
 def run_windows_command(command):
