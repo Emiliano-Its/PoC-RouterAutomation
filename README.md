@@ -12,13 +12,14 @@ Prueba de Concepto para el diseño e implementación de una red empresarial esta
  ┃ ┗ 📄 TransData.pkt         ← Topología completa en Cisco Packet Tracer
  ┣ 📂 src
  ┃ ┣ 📄 auto.py               ← Script principal de automatización
- ┃ ┗ 📄 .env.example          ← Plantilla de variables de entorno
+ ┃ ┣ 📄 Configuracion.pdf     ← Memoria técnica de configuraciones
+ ┃ ┗ 📄 requirements.txt      ← Dependencias del proyecto
  ┣ 📄 .gitignore
  ┗ 📄 README.md
 ```
 
 > **`PoC/`** — Archivo `.pkt` con las 5 sedes, ISP central, switches capa 2/3, WLC y APs.  
-> **`src/`** — Script Python que automatiza la conexión SSH y genera el reporte `.xlsx`.
+> **`src/`** — Script Python, memoria técnica en PDF y dependencias del proyecto.
 
 ---
 
@@ -68,7 +69,7 @@ El reporte generado contiene:
 ### 1. Instalar dependencias
 
 ```bash
-pip install netmiko pandas xlsxwriter python-dotenv
+pip install -r src/requirements.txt
 ```
 
 ### 2. Crear archivo `.env`
