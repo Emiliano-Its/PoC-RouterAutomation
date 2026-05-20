@@ -26,26 +26,23 @@ Prueba de Concepto para el diseño e implementación de una red empresarial esta
 
 Diseño jerárquico en tres capas (acceso, distribución y núcleo) replicado en cada sede.
 
-| Sede | Ubicación | Rango IP | Router-ID OSPF |
-|:----:|:---------:|:--------:|:--------------:|
-| 🏢 Oficinas Centrales | CDMX | `10.1.X.X` | `1.1.1.1` |
-| 🏭 Sucursal Norte | Monterrey | `10.2.X.X` | `1.1.2.1` |
-| 🏬 Sucursal Bajío | Querétaro | `10.3.X.X` | `1.1.3.1` |
-| 🏪 Sucursal Occidente | Guadalajara | `10.4.X.X` | `1.1.4.1` |
-| 📦 Centro de Distribución | León | `10.5.X.X` | `1.1.5.1` |
+**Sedes:**
+- 🏢 Oficinas Centrales — CDMX — `10.1.X.X` — Router-ID `1.1.1.1`
+- 🏭 Sucursal Norte — Monterrey — `10.2.X.X` — Router-ID `1.1.2.1`
+- 🏬 Sucursal Bajío — Querétaro — `10.3.X.X` — Router-ID `1.1.3.1`
+- 🏪 Sucursal Occidente — Guadalajara — `10.4.X.X` — Router-ID `1.1.4.1`
+- 📦 Centro de Distribución — León — `10.5.X.X` — Router-ID `1.1.5.1`
 
 ### ✅ Tecnologías implementadas
 
-| Categoría | Tecnología |
-|-----------|-----------|
-| Segmentación | VLANs (Admin `10`, Ventas `20`, Logística `30`, Invitados `40`, Mgmt `99`) |
-| Ruteo interno | OSPF por sede (proceso privado) |
-| Ruteo WAN | OSPF proceso 1 compartido con ISP |
-| Seguridad | 10 túneles **VPN IPsec site-to-site** en malla completa |
-| Traducción de direcciones | **NAT/PAT** + NAT estático para servicios |
-| Alta disponibilidad | **HSRP** + **EtherChannel LACP** |
-| Control de acceso | **ACLs extendidas** por VLAN |
-| Administración | **NTP**, **Syslog** y **SNMP** centralizados |
+- **Segmentación** — VLANs (Admin `10`, Ventas `20`, Logística `30`, Invitados `40`, Mgmt `99`)
+- **Ruteo interno** — OSPF por sede (proceso privado)
+- **Ruteo WAN** — OSPF proceso 1 compartido con ISP
+- **Seguridad** — 10 túneles VPN IPsec site-to-site en malla completa
+- **Traducción de direcciones** — NAT/PAT + NAT estático para servicios
+- **Alta disponibilidad** — HSRP + EtherChannel LACP
+- **Control de acceso** — ACLs extendidas por VLAN
+- **Administración** — NTP, Syslog y SNMP centralizados
 
 ---
 
@@ -59,11 +56,10 @@ El script `src/auto.py` realiza tres tareas:
 3. Reporte Excel    →  3 pestañas con formato profesional
 ```
 
-| Pestaña | Comando | Contenido |
-|---------|---------|-----------|
-| `Conectividad` | `ping -n 4 [host]` | Resultado ICMP desde Windows |
-| `Configuracion` | `show running-config` | Configuración completa del router |
-| `Interfaces` | `show interfaces` | Estado detallado de interfaces |
+El reporte generado contiene:
+- **Conectividad** — resultado del `ping -n 4 [host]` desde Windows
+- **Configuracion** — salida completa de `show running-config`
+- **Interfaces** — salida completa de `show interfaces`
 
 ---
 
@@ -98,11 +94,9 @@ El reporte se genera en el directorio actual como `reporte_HHMM.xlsx`.
 
 ## 🛠️ Stack tecnológico
 
-| Herramienta | Uso |
-|-------------|-----|
-| Cisco Packet Tracer | Simulación de red |
-| Python 3.x | Lenguaje principal |
-| `Netmiko` | Conexión SSH a dispositivos Cisco |
-| `Pandas` + `XlsxWriter` | Procesamiento y generación de Excel |
-| `python-dotenv` | Manejo seguro de credenciales |
-| `subprocess` | Ejecución de comandos de sistema |
+- **Cisco Packet Tracer** — Simulación de red
+- **Python 3.x** — Lenguaje principal
+- **`Netmiko`** — Conexión SSH a dispositivos Cisco
+- **`Pandas`** + **`XlsxWriter`** — Procesamiento y generación de Excel
+- **`python-dotenv`** — Manejo seguro de credenciales
+- **`subprocess`** — Ejecución de comandos de sistema
